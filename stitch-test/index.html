@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSPlatform | Kinetic Clarity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "secondary": "#565e74",
+                        "primary": "#0050cb",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d8",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-container": "#dae2fd",
+                        "tertiary-container": "#cc4204",
+                        "primary-fixed": "#dae1ff",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#5c647a",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-primary": "#ffffff",
+                        "outline": "#727687",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-secondary-fixed": "#131b2e",
+                        "tertiary": "#a33200",
+                        "on-surface-variant": "#424656",
+                        "inverse-primary": "#b3c5ff",
+                        "primary-container": "#0066ff",
+                        "surface-tint": "#0054d6",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-primary-container": "#f8f7ff",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "64px",
+                        "max-width": "1280px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display": ["Inter"],
+                        "code": ["jetbrainsMono"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "code": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0b1c30;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline docked full-width top-0 z-50 fixed w-full">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-lg h-[64px] w-full">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                SaaSPlatform
+            </div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-colors duration-200" href="#">Features</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">About</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="bg-primary-container text-on-primary-container px-lg py-sm font-label-md text-label-md rounded active:scale-95 transition-all duration-150 hover:opacity-90">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-[140px] pb-xl px-lg">
+<div class="max-w-[1280px] mx-auto text-center">
+<h1 class="font-display text-display mb-md tracking-tight">
+                Scale your business with <span class="text-primary">Kinetic Clarity</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-xl">
+                The all-in-one platform for modern teams to collaborate and deliver results. Precision-engineered for high-performance organizations.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-md">
+<button class="bg-primary-container text-on-primary-container px-xl py-md rounded-lg font-title-lg text-title-lg shadow-sm hover:shadow-md transition-shadow active:scale-95">
+                    Start Free Trial
+                </button>
+<button class="border border-outline-variant text-on-surface px-xl py-md rounded-lg font-title-lg text-title-lg hover:bg-surface-container-low transition-colors active:scale-95">
+                    Book a Demo
+                </button>
+</div>
+<!-- Hero Image / Visual Anchor -->
+<div class="mt-xl relative rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest p-xs shadow-lg">
+<img alt="SaaS Platform Dashboard" class="w-full rounded-lg" data-alt="A clean, high-resolution minimalist software dashboard interface displayed on a sleek laptop screen. The UI design features a crisp white canvas with sophisticated data visualizations in deep blue and soft gray accents. The environment is a bright, airy professional workspace with soft sunlight and high-key lighting. The overall mood is one of technical precision, organizational efficiency, and calm control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOWld3lPe94ngAUKseYL-8RuR5VrEZRUr6n6m6LjsrYMxR_rS6apcmefd57RcrJCnSe81kbEIIWw7UXSWypMoFwxwHiUoXeeQW3lBPz04iAB0qLHWFPiAAB-kqxAZcI1Fi0Fz0uzkbbkcpmAfbcxD23i8o_2w0OCe5nZFA-v6qRNuHvgqWVtyIc30ZnMu6THWIwYtFfpjPMjWo_u_c9VwV63riLR-8_v6L3NwpcprOKAaP3mZdSR2Z5YlKvVK-Uf1QUDUPMtvO1TU"/>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-[1280px] mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<!-- Feature 1 -->
+<div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[28px]" data-icon="speed">speed</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Fast</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Engineered for speed with a globally distributed infrastructure that ensures sub-100ms response times for your entire team.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[28px]" data-icon="shield">shield</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Secure</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Enterprise-grade security with end-to-end encryption, SOC2 compliance, and advanced role-based access controls standard.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[28px]" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Scalable</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our platform grows with you, from your first two founders to a global team of thousands without missing a beat.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-xl">
+<div class="max-w-[1280px] mx-auto px-lg">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Transparent Pricing</h2>
+<p class="font-body-lg text-body-lg text-secondary">Choose the plan that fits your current needs and scale when ready.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg items-end">
+<!-- Starter -->
+<div class="p-xl border border-outline-variant rounded-xl bg-surface-container-lowest flex flex-col h-full">
+<div class="font-label-md text-label-md text-secondary mb-xs">Starter</div>
+<div class="font-display text-[40px] mb-md">$0<span class="text-body-md text-secondary">/mo</span></div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Up to 3 members</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Basic analytics</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> 5GB Storage</li>
+</ul>
+<button class="w-full py-md border border-outline-variant rounded-lg font-title-lg text-title-lg hover:bg-surface-container transition-colors">Choose Starter</button>
+</div>
+<!-- Pro (Featured) -->
+<div class="p-xl border-2 border-primary rounded-xl bg-surface-container-lowest relative flex flex-col h-[105%] shadow-xl scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-lg py-xs rounded-full font-label-md text-label-md">
+                        Most Popular
+                    </div>
+<div class="font-label-md text-label-md text-primary font-bold mb-xs">Pro</div>
+<div class="font-display text-[40px] mb-md text-on-surface">$29<span class="text-body-md text-secondary">/mo</span></div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Everything in Starter</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Unlimited members</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Advanced reporting</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> 100GB Storage</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> API Access</li>
+</ul>
+<button class="w-full py-md bg-primary text-on-primary rounded-lg font-title-lg text-title-lg hover:opacity-90 transition-opacity">Get Started with Pro</button>
+</div>
+<!-- Enterprise -->
+<div class="p-xl border border-outline-variant rounded-xl bg-surface-container-lowest flex flex-col h-full">
+<div class="font-label-md text-label-md text-secondary mb-xs">Enterprise</div>
+<div class="font-display text-[40px] mb-md">Custom</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Everything in Pro</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Custom integrations</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> Dedicated support</li>
+<li class="flex items-center gap-sm font-body-md text-body-md"><span class="material-symbols-outlined text-primary" data-icon="check">check</span> SSO &amp; SAML</li>
+</ul>
+<button class="w-full py-md border border-outline-variant rounded-lg font-title-lg text-title-lg hover:bg-surface-container transition-colors">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl mb-xl">
+<div class="max-w-[1280px] mx-auto px-lg">
+<div class="bg-primary text-on-primary rounded-xl p-xl text-center relative overflow-hidden">
+<!-- Background visual interest -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+<h2 class="font-display text-headline-lg mb-md relative z-10">Ready to transform your workflow?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-xl max-w-xl mx-auto relative z-10">
+                    Join over 10,000+ teams who are building the future with Kinetic Clarity. Start your 14-day free trial today.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md relative z-10">
+<button class="bg-white text-primary px-xl py-md rounded-lg font-title-lg text-title-lg hover:bg-opacity-90 transition-all active:scale-95">
+                        Start Free Trial
+                    </button>
+<button class="border border-white border-opacity-30 text-white px-xl py-md rounded-lg font-title-lg text-title-lg hover:bg-white hover:bg-opacity-10 transition-all active:scale-95">
+                        Schedule a Demo
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline full-width">
+<div class="max-w-[1280px] mx-auto px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md w-full">
+<div class="flex flex-col gap-sm items-center md:items-start">
+<div class="font-title-lg text-title-lg font-bold text-on-surface dark:text-inverse-on-surface">
+                    SaaSPlatform
+                </div>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant">
+                    © 2024 SaaSPlatform Inc. All rights reserved.
+                </p>
+</div>
+<div class="flex gap-lg flex-wrap justify-center">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-200 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-200 opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for subtle fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
